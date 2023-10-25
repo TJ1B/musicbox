@@ -1,26 +1,28 @@
-const songs = [
-    "Song 1",
-    "Song 2",
-    "Song 3",
-    // ... add all your songs here
-];
+let songs = [];
 
-const songList = document.getElementById('songList');
-const searchBox = document.getElementById('searchBox');
+// Fetch the songs from the JSON file
+fetch('songs.json')
+    .then(response => response.json())
+    .then(data => {
+        songs = data;
+        renderSongs(songs); // Render songs after fetching
+    });
 
 function renderSongs(filteredSongs) {
     songList.innerHTML = '';
-    for (const song of filteredSongs) {
+    for (const item of filteredSongs) {
         const li = document.createElement('li');
-        li.textContent = song;
+        li.textContent = `${item.song} by ${item.singer} [${item.language}]`;
         songList.appendChild(li);
     }
 }
 
 searchBox.addEventListener('input', function() {
     const query = searchBox.value.toLowerCase();
-    const filteredSongs = songs.filter(song => song.toLowerCase().includes(query));
+    const filteredSongs = songs.filter(item => 
+        item.song.toLowerCase().includes(query) || 
+        item.singer.toLowerCase().includes(query) ||
+        item.language.toLowerCase().includes(query)
+    );
     renderSongs(filteredSongs);
 });
-
-renderSongs(songs);
