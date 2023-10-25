@@ -1,7 +1,11 @@
 let songs = [];
 
 // Fetch the songs from the JSON file
-fetch('songs.json')
+fetch('songs.json', {
+    headers : { 
+        'Content-Type': 'application/json; charset=UTF-8'
+    }
+})
     .then(response => response.json())
     .then(data => {
         songs = data;
