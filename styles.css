@@ -22,17 +22,17 @@ h1 {
 
 #searchBox {
     width: 25%;
-    padding: 10px;
+    padding: 10px 14px;
     border-radius: 10px;
     border: 1px solid darkgray;
 }
 
 #randomPick {
-    padding: 10px 15px;
+    padding: 8px 14px;
     background-color: rgb(121, 218, 121);
     color: rgb(48, 48, 48);
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -54,14 +54,14 @@ h1 {
 
 #songTable th {
     position: sticky;
-    top: -10px;
+    top: -8px;
     background-color: #333; /* 使表头背景不透明 */
     z-index: 0px; /* 确保表头在其他表格行之上 */
 }
 
 #songTable th, #songTable td {
     border: 1px solid #474747;
-    padding: 8px;
+    padding: 10px;
 }
 
 #songTable tr:hover {
@@ -92,4 +92,54 @@ h1 {
 .highlighted-row {
     background-color: rgb(121, 218, 121) !important;
     color: rgb(48, 48, 48);
+}
+
+.footer-container {
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #000000;  /* 为尾注添加深色背景 */
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-top: 1px solid #2E2E2E;
+    background-image: url('footer.png');  /* 更改为您的图片路径 */
+    background-size: cover;  /* 使图片覆盖整个footer区域 */
+    background-repeat: no-repeat;  /* 防止图片重复 */
+    background-position: center;  /* 将图片居中 */
+}
+
+footer p {
+    margin: 0;
+    padding: 5px;
+    font-size: 0.9em;  /* 设置尾注文字大小 */
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #randomResult {
+        margin-bottom: 10px;
+        font-size: 0.9em;
+    }
+
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #searchBox {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .header {
+        padding: 10px 0;
+    }
+
+    .table-container {
+        height: 400px; /* Adjust the table height for mobile view */
+    }
+
+
 }
