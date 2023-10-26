@@ -5,13 +5,13 @@
       "language": "国语"
     },
     {
-      "songName": "Brooklyn Baby",
-      "singerName": "Lana Del Ray",
+      "songName": "Bet On Me",
+      "singerName": "Walk off the Earth",
       "language": "英语"
     },
     {
-      "songName": "Bet On Me",
-      "singerName": "Walk off the Earth",
+      "songName": "Brooklyn Baby",
+      "singerName": "Lana Del Ray",
       "language": "英语"
     },
     {
@@ -25,18 +25,28 @@
       "language": "英语"
     },
     {
-      "songName": "Don't Cry",
-      "singerName": "Guns N' Roses",
-      "language": "英语"
-    },
-    {
       "songName": "Diet Mountain Dew",
       "singerName": "Lana Del Ray",
       "language": "英语"
     },
     {
+      "songName": "Don't Cry",
+      "singerName": "Guns N' Roses",
+      "language": "英语"
+    },
+    {
+      "songName": "Fly Away",
+      "singerName": "G.E.M. 邓紫棋",
+      "language": "国语"
+    },
+    {
       "songName": "Fly Me To The Moon",
       "singerName": "小野丽莎",
+      "language": "英语"
+    },
+    {
+      "songName": "Hey Jude",
+      "singerName": "The Beatles",
       "language": "英语"
     },
     {
@@ -50,9 +60,9 @@
       "language": "英语"
     },
     {
-      "songName": "Hey Jude",
-      "singerName": "The Beatles",
-      "language": "英语"
+      "songName": "Letting Go",
+      "singerName": "蔡健雅",
+      "language": "国语"
     },
     {
       "songName": "Memory",
@@ -103,21 +113,6 @@
       "songName": "Young and Beautiful",
       "singerName": "Lana Del Ray",
       "language": "英语"
-    },
-    {
-      "songName": "斯卡布罗集市",
-      "singerName": "Sarah Brightman",
-      "language": "英语"
-    },
-    {
-      "songName": "Fly Away",
-      "singerName": "G.E.M. 邓紫棋",
-      "language": "国语"
-    },
-    {
-      "songName": "Letting Go",
-      "singerName": "蔡健雅",
-      "language": "国语"
     },
     {
       "songName": "爱你",
@@ -431,7 +426,7 @@
     },
     {
       "songName": "后会无期",
-      "singerName": "邓紫棋",
+      "singerName": "G.E.M. 邓紫棋",
       "language": "国语"
     },
     {
@@ -440,13 +435,18 @@
       "language": "国语"
     },
     {
-      "songName": "画",
-      "singerName": "G.E.M. 邓紫棋",
+      "songName": "忽然之间",
+      "singerName": "莫文蔚",
       "language": "国语"
     },
     {
       "songName": "画",
       "singerName": "赵雷",
+      "language": "国语"
+    },
+    {
+      "songName": "画",
+      "singerName": "G.E.M. 邓紫棋",
       "language": "国语"
     },
     {
@@ -462,6 +462,11 @@
     {
       "songName": "欢颜",
       "singerName": "齐豫",
+      "language": "国语"
+    },
+    {
+      "songName": "会呼吸的痛",
+      "singerName": "梁静茹",
       "language": "国语"
     },
     {
@@ -580,6 +585,11 @@
       "language": "国语"
     },
     {
+      "songName": "美丽世界的孤儿",
+      "singerName": "汪峰",
+      "language": "国语"
+    },
+    {
       "songName": "没那么简单",
       "singerName": "黄小琥",
       "language": "国语"
@@ -592,11 +602,6 @@
     {
       "songName": "没有理想的人不伤心",
       "singerName": "新裤子",
-      "language": "国语"
-    },
-    {
-      "songName": "漠河舞厅",
-      "singerName": "柳爽",
       "language": "国语"
     },
     {
@@ -625,6 +630,11 @@
       "language": "国语"
     },
     {
+      "songName": "漠河舞厅",
+      "singerName": "柳爽",
+      "language": "国语"
+    },
+    {
       "songName": "那些年",
       "singerName": "胡夏",
       "language": "国语"
@@ -647,6 +657,11 @@
     {
       "songName": "你把我灌醉",
       "singerName": "G.E.M. 邓紫棋",
+      "language": "国语"
+    },
+    {
+      "songName": "你比从前快乐",
+      "singerName": "吴宗宪",
       "language": "国语"
     },
     {
@@ -677,11 +692,6 @@
     {
       "songName": "你在终点等我",
       "singerName": "王菲",
-      "language": "国语"
-    },
-    {
-      "songName": "你比从前快乐",
-      "singerName": "吴宗宪",
       "language": "国语"
     },
     {
@@ -850,6 +860,11 @@
       "language": "国语"
     },
     {
+      "songName": "斯卡布罗集市",
+      "singerName": "Sarah Brightman",
+      "language": "英语"
+    },
+    {
       "songName": "素颜",
       "singerName": "许嵩",
       "language": "国语"
@@ -870,6 +885,11 @@
       "language": "国语"
     },
     {
+      "songName": "淘汰",
+      "singerName": "陈奕迅",
+      "language": "国语"
+    },
+    {
       "songName": "天黑黑",
       "singerName": "孙燕姿",
       "language": "国语"
@@ -877,11 +897,6 @@
     {
       "songName": "天空",
       "singerName": "蔡依林",
-      "language": "国语"
-    },
-    {
-      "songName": "童话镇",
-      "singerName": "陈一发儿",
       "language": "国语"
     },
     {
@@ -895,13 +910,13 @@
       "language": "国语"
     },
     {
-      "songName": "淘汰",
-      "singerName": "陈奕迅",
+      "songName": "听海",
+      "singerName": "张惠妹",
       "language": "国语"
     },
     {
-      "songName": "听海",
-      "singerName": "张惠妹",
+      "songName": "童话镇",
+      "singerName": "陈一发儿",
       "language": "国语"
     },
     {
@@ -1030,13 +1045,13 @@
       "language": "国语"
     },
     {
-      "songName": "小雨",
-      "singerName": "黄龄",
+      "songName": "小宇",
+      "singerName": "张震岳",
       "language": "国语"
     },
     {
-      "songName": "小宇",
-      "singerName": "张震岳",
+      "songName": "小雨",
+      "singerName": "黄龄",
       "language": "国语"
     },
     {
@@ -1152,21 +1167,6 @@
     {
       "songName": "最长的电影",
       "singerName": "周杰伦",
-      "language": "国语"
-    },
-    {
-      "songName": "美丽世界的孤儿",
-      "singerName": "汪峰",
-      "language": "国语"
-    },
-    {
-      "songName": "忽然之间",
-      "singerName": "莫文蔚",
-      "language": "国语"
-    },
-    {
-      "songName": "会呼吸的痛",
-      "singerName": "梁静茹",
       "language": "国语"
     }
   ]

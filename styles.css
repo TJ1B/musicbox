@@ -1,40 +1,95 @@
 body {
-    font-family: 'Noto Sans SC', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: darkgray;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: rgb(121, 218, 121);
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 #searchBox {
+    width: 25%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid darkgray;
+}
+
+#randomPick {
+    padding: 10px 15px;
+    background-color: rgb(121, 218, 121);
+    color: rgb(48, 48, 48);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#randomResult {
+    margin-bottom: 10px;
+}
+
+.table-container {
+    height: 600px; 
+    overflow-y: auto;
+    border-top: 1px solid #333;  
+    border-bottom: 1px solid #333; 
+}
+
+#songTable {
     width: 100%;
-    padding: 10px;
-    margin: 20px 0;
-    box-sizing: border-box;
+    border-collapse: collapse;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+#songTable th {
+    position: sticky;
+    top: -10px;
+    background-color: #333; /* 使表头背景不透明 */
+    z-index: 0px; /* 确保表头在其他表格行之上 */
 }
 
-li {
-    padding: 10px;
-    border-bottom: 1px solid #e1e1e1;
+#songTable th, #songTable td {
+    border: 1px solid #474747;
+    padding: 8px;
 }
 
-li:last-child {
-    border-bottom: none;
+#songTable tr:hover {
+    background-color: #4e4e4e;
+}
+
+#songTable th[data-sort] {
+    cursor: pointer;  /* 让用户知道这是一个可点击的项 */
+    transition: background-color 0.3s;  /* 背景色渐变效果 */
+}
+
+#songTable th[data-sort]:hover {
+    background-color: #555;  /* 或您喜欢的任何颜色 */
+}
+
+#songTable th:nth-child(1), #songTable td:nth-child(1) { /* 第一列, songName */
+    width: 40%;  /* 调整为所需的宽度 */
+}
+
+#songTable th:nth-child(2), #songTable td:nth-child(2) { /* 第二列, singerName */
+    width: 40%;  /* 调整为所需的宽度 */
+}
+
+#songTable th:nth-child(3), #songTable td:nth-child(3) { /* 第三列, language */
+    width: 20%;  /* 调整为所需的宽度 */
+}
+
+.highlighted-row {
+    background-color: rgb(121, 218, 121) !important;
+    color: rgb(48, 48, 48);
 }
