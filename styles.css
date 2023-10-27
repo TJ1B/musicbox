@@ -49,14 +49,10 @@ h1 {
 
 .song-name {
     cursor: pointer;
-    transition: background-color 0.5s linear;  /* 设置1秒的渐变时间 */
-    transition: color 0.5s linear;  /* 设置1秒的渐变时间 */
 }
 
-
-.song-name-longpress {
-    background-color: rgb(147, 209, 147);  /* 最终的颜色，可以根据需要进行调整 */
-    color: rgb(0, 0, 0);
+.clicked-song {
+    color:rgb(53, 128, 81); /* 你可以根据需要更改颜色 */
 }
 
 

@@ -10,100 +10,55 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-let pressStartTime;
-let longPressTimer;
-
-document.addEventListener('mousedown', function(event) {
-    if (event.target.classList.contains('song-name')) {
-        pressStartTime = Date.now();
-
-        event.target.classList.add('song-name-longpress');
-
-        longPressTimer = setTimeout(() => {
-            event.target.classList.remove('song-name-longpress');
-            
-            // 获取歌名和歌手
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('song-name')) {
             const songName = event.target.innerText;
-            const singerName = event.target.nextElementSibling.innerText;
-            
-            copyToClipboard(`${songName} - ${singerName}`);
-            
-            // 显示提示
-            const notification = document.getElementById('copyNotification');
-            notification.style.display = 'block';
-            
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 2000);
-        }, 1000);
-    }
-});
-
-document.addEventListener('mouseup', function(event) {
-    if (event.target.classList.contains('song-name')) {
-        clearTimeout(longPressTimer);  // 清除定时器
-
-        let elapsedTime = Date.now() - pressStartTime;  // 计算按下的时间
-        if (elapsedTime < 500) {  // 如果按下的时间小于1秒
-            event.target.classList.remove('song-name-longpress');  // 清除渐变效果
+            const singerName = event.target.parentElement.cells[1].innerText;
+            const contentToCopy = `${songName} - ${singerName}`;
+            copyToClipboard(contentToCopy);
+            showCopyNotification();
         }
-    }
+    });
 });
 
-function copyToClipboard(text) {
+function copyToClipboard(content) {
     const textarea = document.createElement('textarea');
-    textarea.value = text;
+    textarea.value = content;
     document.body.appendChild(textarea);
     textarea.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
-
 }
 
- // 增加手机长按复制
-document.addEventListener('touchstart', function(event) {
-    if (event.target.classList.contains('song-name')) {
-        pressStartTime = Date.now();
-        event.target.classList.add('song-name-longpress');
+function showCopyNotification() {
+    const notification = document.getElementById('copyNotification');
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 2000);
+}
 
-        longPressTimer = setTimeout(() => {
-            event.target.classList.remove('song-name-longpress');
-            
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('song-name')) {
+            // 移除之前点击的歌名的颜色
+            const previousClickedSong = document.querySelector('.clicked-song');
+            if (previousClickedSong) {
+                previousClickedSong.classList.remove('clicked-song');
+            }
+
+            // 为当前点击的歌名添加颜色
+            event.target.classList.add('clicked-song');
+
             const songName = event.target.innerText;
-            const singerName = event.target.nextElementSibling.innerText;
-            
-            copyToClipboard(`${songName} 由 ${singerName}`);
-
-            // 显示提示
-            const notification = document.getElementById('copyNotification');
-            notification.style.display = 'block';
-            
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 2000);
-
-        }, 1000);
-    }
-});
-
-document.addEventListener('touchend', function(event) {
-    if (event.target.classList.contains('song-name')) {
-        clearTimeout(longPressTimer);
-        let elapsedTime = Date.now() - pressStartTime;
-        if (elapsedTime < 1000) {
-            event.target.classList.remove('song-name-longpress');
+            const singerName = event.target.parentElement.cells[1].innerText;
+            const contentToCopy = `${songName} - ${singerName}`;
+            copyToClipboard(contentToCopy);
+            showCopyNotification();
         }
-    }
+    });
 });
-
-document.addEventListener('touchmove', function(event) {
-    if (event.target.classList.contains('song-name')) {
-        clearTimeout(longPressTimer);
-        event.target.classList.remove('song-name-longpress');
-    }
-});
-
-
 
 document.getElementById('searchBox').addEventListener('input', function() {
     const searchTerm = this.value.toLowerCase();
