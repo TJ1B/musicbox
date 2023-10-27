@@ -5,11 +5,12 @@ Main functions:
 - earch by singer name;
 - random pick a song and highlight in the list
 - sort list by song name, singer name or language
+- long press song name to copy song name and singer name to clipboard
 
 TJ1B host a personal channel at bilibili: 
 https://space.bilibili.com/489406226
 
-Created with assistance of ChatGPT 4.
+Created with ChatGPT 4.
 The creator is new to coding. The webpage is designed for personal use.
 Feel free to make modifications and reuse.
 
@@ -20,10 +21,11 @@ Feel free to make modifications and reuse.
 - 按歌手姓名搜索；
 - 随机选择一首歌曲并在列表中突出显示
 - 按歌曲名称、歌手名称或语言对列表进行排序
+- 长按歌名复制歌名和歌手名到剪贴板
 
 TJ1B在bilibili开设个人频道：
 https://space.bilibili.com/489406226
 
-在 ChatGPT 4 的帮助下创建。
+依靠 ChatGPT 4 创建。
 创建者是编码新手。该网页为个人使用而设计。
 欢迎随意修改和使用。
