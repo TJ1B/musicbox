@@ -47,6 +47,19 @@ h1 {
     border-bottom: 1px solid #333; 
 }
 
+.song-name {
+    cursor: pointer;
+    transition: background-color 0.5s linear;  /* 设置1秒的渐变时间 */
+    transition: color 0.5s linear;  /* 设置1秒的渐变时间 */
+}
+
+
+.song-name-longpress {
+    background-color: rgb(147, 209, 147);  /* 最终的颜色，可以根据需要进行调整 */
+    color: rgb(0, 0, 0);
+}
+
+
 #songTable {
     width: 100%;
     border-collapse: collapse;

@@ -10,6 +10,52 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+let pressStartTime;
+let longPressTimer;
+
+document.addEventListener('mousedown', function(event) {
+    if (event.target.classList.contains('song-name')) {
+        pressStartTime = Date.now();
+
+        event.target.classList.add('song-name-longpress');
+
+        longPressTimer = setTimeout(() => {
+            event.target.classList.remove('song-name-longpress');
+            
+            // 获取歌名和歌手
+            const songName = event.target.innerText;
+            const singerName = event.target.nextElementSibling.innerText;
+            
+            copyToClipboard(`${songName} - ${singerName}`);
+            alert('已复制！弹幕输入点歌+复制好的歌名');
+        }, 1000);
+    }
+});
+
+document.addEventListener('mouseup', function(event) {
+    if (event.target.classList.contains('song-name')) {
+        clearTimeout(longPressTimer);  // 清除定时器
+
+        let elapsedTime = Date.now() - pressStartTime;  // 计算按下的时间
+        if (elapsedTime < 500) {  // 如果按下的时间小于1秒
+            event.target.classList.remove('song-name-longpress');  // 清除渐变效果
+        }
+    }
+});
+
+function copyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+}
+
+
+
+
 document.getElementById('searchBox').addEventListener('input', function() {
     const searchTerm = this.value.toLowerCase();
     const filteredSongs = songs.filter(song => 
@@ -49,11 +95,19 @@ function renderSongs(filteredSongs) {
 
     for (const item of filteredSongs) {
         const row = songList.insertRow();
-        row.insertCell().innerText = item.songName;
+    
+        const songNameCell = row.insertCell();
+        songNameCell.innerText = item.songName;
+        songNameCell.classList.add("song-name"); // Add the class here
+    
         row.insertCell().innerText = item.singerName;
         row.insertCell().innerText = item.language;
     }
+
+
+
 }
+
 
 document.getElementById('randomPick').addEventListener('click', function() {
     if (songs.length === 0) {
@@ -75,5 +129,5 @@ document.getElementById('randomPick').addEventListener('click', function() {
         }
     });
 
-    document.getElementById('randomResult').innerText = `随机歌曲：${randomSong.songName} 由 ${randomSong.singerName}`;
+document.getElementById('randomResult').innerText = `随机歌曲：${randomSong.songName} 由 ${randomSong.singerName}`;
 });
