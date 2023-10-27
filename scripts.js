@@ -27,7 +27,14 @@ document.addEventListener('mousedown', function(event) {
             const singerName = event.target.nextElementSibling.innerText;
             
             copyToClipboard(`${songName} - ${singerName}`);
-            alert('已复制！弹幕输入点歌+复制好的歌名');
+            
+            // 显示提示
+            const notification = document.getElementById('copyNotification');
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000);
         }, 1000);
     }
 });
@@ -53,6 +60,48 @@ function copyToClipboard(text) {
 
 }
 
+ // 增加手机长按复制
+document.addEventListener('touchstart', function(event) {
+    if (event.target.classList.contains('song-name')) {
+        pressStartTime = Date.now();
+        event.target.classList.add('song-name-longpress');
+
+        longPressTimer = setTimeout(() => {
+            event.target.classList.remove('song-name-longpress');
+            
+            const songName = event.target.innerText;
+            const singerName = event.target.nextElementSibling.innerText;
+            
+            copyToClipboard(`${songName} 由 ${singerName}`);
+
+            // 显示提示
+            const notification = document.getElementById('copyNotification');
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000);
+
+        }, 1000);
+    }
+});
+
+document.addEventListener('touchend', function(event) {
+    if (event.target.classList.contains('song-name')) {
+        clearTimeout(longPressTimer);
+        let elapsedTime = Date.now() - pressStartTime;
+        if (elapsedTime < 1000) {
+            event.target.classList.remove('song-name-longpress');
+        }
+    }
+});
+
+document.addEventListener('touchmove', function(event) {
+    if (event.target.classList.contains('song-name')) {
+        clearTimeout(longPressTimer);
+        event.target.classList.remove('song-name-longpress');
+    }
+});
 
 
 
