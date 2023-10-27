@@ -10,7 +10,7 @@ Main functions:
 TJ1B host a personal channel at bilibili: 
 https://space.bilibili.com/489406226
 
-Created by using ChatGPT 4.
+Created with ChatGPT 4.
 The creator is new to coding. The webpage is designed for personal use.
 Feel free to make modifications and reuse.
 
