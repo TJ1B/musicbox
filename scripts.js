@@ -112,7 +112,27 @@ function renderSongs(filteredSongs) {
 
 }
 
+// 显示曲目总数量
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('https://tj1b.github.io/musicbox/songs.json');
+        songs = await response.json();
+        renderSongs(songs);
 
+        // 更新曲目数量
+        updateSongCount(songs.length);
+    } catch (error) {
+        console.error('Error fetching the song list:', error);
+    }
+});
+
+// 更新曲目数量的函数
+function updateSongCount(count) {
+    const songCountElement = document.getElementById('songCount');
+    songCountElement.textContent = `总收录曲目数量：${count}`;
+}
+
+// 随机歌曲
 document.getElementById('randomPick').addEventListener('click', function() {
     if (songs.length === 0) {
         document.getElementById('randomResult').innerText = "歌曲列表为空！";

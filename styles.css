@@ -52,7 +52,7 @@ h1 {
 }
 
 .clicked-song {
-    color:rgb(53, 128, 81); /* 你可以根据需要更改颜色 */
+    color:rgb(53, 128, 81); /* 可以根据需要更改颜色 */
 }
 
 
@@ -78,7 +78,7 @@ h1 {
 }
 
 #songTable th[data-sort] {
-    cursor: pointer;  /* 让用户知道这是一个可点击的项 */
+    cursor: pointer;  
     transition: background-color 0.3s;  /* 背景色渐变效果 */
 }
 
