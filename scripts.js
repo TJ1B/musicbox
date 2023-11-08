@@ -87,30 +87,66 @@ function renderSongs(filteredSongs) {
         console.error("Expected an array but got:", filteredSongs);
         return;
     }
+    
+    // 检查是否需要按照拼音排序
+    if (currentSort.key === 'songName' && window.pinyin) {
+        // 使用 pinyin 库将歌曲名转换为拼音并进行排序
+        filteredSongs.sort((a, b) => {
+            let pyA = pinyin(a.songName, { style: pinyin.STYLE_NORMAL }).join('');
+            let pyB = pinyin(b.songName, { style: pinyin.STYLE_NORMAL }).join('');
+            // 根据拼音进行升序或降序排序
+            return (pyA.localeCompare(pyB)) * (currentSort.direction === 'asc' ? 1 : -1);
+        });
+    } else {
+        // 其他字段的通用排序逻辑
+        filteredSongs.sort((a, b) => {
+            if (a[currentSort.key] < b[currentSort.key]) return currentSort.direction === 'asc' ? -1 : 1;
+            if (a[currentSort.key] > b[currentSort.key]) return currentSort.direction === 'asc' ? 1 : -1;
+            return 0;
+        });
+    }
 
+    // 清空当前歌曲列表
     const songList = document.getElementById('songList');
     songList.innerHTML = '';
 
-    filteredSongs.sort((a, b) => {
-        if (a[currentSort.key] < b[currentSort.key]) return currentSort.direction === 'asc' ? -1 : 1;
-        if (a[currentSort.key] > b[currentSort.key]) return currentSort.direction === 'asc' ? 1 : -1;
-        return 0;
-    });
-
-    for (const item of filteredSongs) {
+    // 遍历排序后的歌曲列表，并渲染到页面上
+    filteredSongs.forEach(song => {
         const row = songList.insertRow();
-    
         const songNameCell = row.insertCell();
-        songNameCell.innerText = item.songName;
-        songNameCell.classList.add("song-name"); // Add the class here
+        songNameCell.innerText = song.songName;
+        songNameCell.classList.add("song-name"); // 添加类名以触发后面的点击事件
+        
+        const singerNameCell = row.insertCell();
+        singerNameCell.innerText = song.singerName;
+        singerNameCell.classList.add("singer-name"); // 添加类名以触发后面的点击事件
+        
+        const languageCell = row.insertCell();
+        languageCell.innerText = song.language;
+    });
     
-        row.insertCell().innerText = item.singerName;
-        row.insertCell().innerText = item.language;
-    }
-
-
-
+    // 重新绑定歌手名和歌曲名的点击事件
+    bindClickEvents();
 }
+
+function bindClickEvents() {
+    // 绑定歌曲名点击事件
+    document.querySelectorAll('.song-name').forEach(songNameCell => {
+        songNameCell.addEventListener('click', () => {
+            // 歌曲名点击的逻辑
+        });
+    });
+    
+    // 绑定歌手名点击事件
+    document.querySelectorAll('.singer-name').forEach(singerNameCell => {
+        singerNameCell.addEventListener('click', () => {
+            // 歌手名点击的逻辑
+        });
+    });
+}
+
+// 请确保在加载页面时调用 renderSongs 函数
+
 
 // 显示曲目总数量
 document.addEventListener('DOMContentLoaded', async () => {
