@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenjo-1-Beta Music Box</title>
+   
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Tenjo-1-Beta Music Box</h1>
+        
+       
+        <div class="search-container">
+           
+            <input type="text" id="searchBox" placeholder="搜索歌曲或歌手...">
+        </div>
+    <div class="search-container">
+        <button id="randomPick">随机摇一首！</button>
+    </div>
+    <div class="search-container">
+        <span id="randomResult"></span>
+    </div>
+    </div>
+
+    <div id="copyNotification" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px 20px; border-radius: 8px;">
+        已复制！请弹幕输入点歌+复制好的歌名
+    </div>
+
+    <div class="table-container">
+        <table id="songTable">
+            <thead>
+                <tr>
+                    <th data-sort="songName">歌名(点击复制)  ▼</th>
+                    <th data-sort="singerName">歌手  ▼</th>
+                    <th data-sort="language">语言  ▼</th>
+                </tr>
+            </thead>
+            <tbody id="songList">
+                <!-- Song entries will be populated here by JavaScript -->
+            </tbody>
+        </table>
+        
+    </div>
+    <p id="songCount">总收录曲目数量：0</p>
+
+    <script src="scripts.js"></script>
+</body>
+
+<footer>
+    <div class="footer-container">
+        <p>© 2023 TJ1B. 感谢访问，祝你天天开心！</p>
+    </div>
+</footer>
+</html>
