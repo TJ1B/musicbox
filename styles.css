@@ -122,7 +122,57 @@ footer p {
     font-size: 0.9em;  /* 设置尾注文字大小 */
 }
 
-@media screen and (max-width: 768px) {
+
+
+
+  /* Global Time Section Styling */
+#global-times {
+    background-color: #000; /* Black background */
+    color: rgb(121, 218, 121); /* Green text */
+    padding: 10px 5px; /* Compact padding */
+    font-family: 'Arial', sans-serif; /* Modern font, change as needed */
+  }
+  
+  #global-times h2 {
+    margin-bottom: 8px;
+    font-size: 1.1em; /* Slightly smaller heading for compact design */
+  }
+  
+  /* Container for time entries */
+  .time-entries {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Reduced space between the children for a compact design */
+  }
+  
+  /* Individual time entries */
+  .time-entry {
+    background-color: #000; /* Maintain black background for continuity */
+    color: rgb(121, 218, 121); /* Green text */
+    padding: 5px; /* Reduced padding for a compact design */
+    border: 1px solid rgb(121, 218, 121); /* Green border */
+    border-radius: 2px; /* Smaller border radius for a sharper look */
+    flex: 1; /* Allows equal spacing and takes up available space */
+    min-width: 80px; /* Minimum width to ensure content fits */
+    text-align: center; /* Center-align the text */
+  }
+  
+  .time-entry h3 {
+    margin: 0;
+    font-size: 0.8em; /* Smaller font size for city names */
+    font-weight: normal; /* Less emphasis on city names to highlight times */
+  }
+  
+  .time-entry p {
+    margin: 3px 0 0; /* Reduced space above the time */
+    font-size: 0.9em; /* Compact font size for times */
+    font-weight: bold; /* Bold to make the time stand out */
+  }
+  
+ 
+  
+  
+  @media screen and (max-width: 768px) {
     body {
         padding: 10px;
     }
@@ -150,5 +200,21 @@ footer p {
         height: 300px; /* Adjust the table height for mobile view */
     }
 
+ /* Responsive Design for mobile screens */
 
-}
+ .time-entry {
+    padding: 3px; /* Less padding for a more compact entry */
+    margin: 1px; /* Reduce margin to save space */
+    flex: 1; /* Allows shrinking and growing as needed */
+    min-width: 0; /* Allows shrinking below the specified width */
+  }
+
+  /* Adjust font sizes for mobile for a more compact look */
+  .time-entry h3 {
+    font-size: 0.7em; /* Even smaller font size for city names on mobile */
+  }
+
+  .time-entry p {
+    font-size: 0.8em; /* Slightly smaller font size for times on mobile */
+  }
+  }

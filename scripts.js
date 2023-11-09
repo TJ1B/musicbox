@@ -82,6 +82,35 @@ document.querySelectorAll('#songTable th').forEach(th => {
     });
 });
 
+
+  // 世界时钟
+function updateTimes() {
+    const timeZones = [
+        { el: 'time-beijing', timeZone: 'Asia/Shanghai' },
+        { el: 'time-new-york', timeZone: 'America/New_York' },
+        { el: 'time-los-angeles', timeZone: 'America/Los_Angeles' },
+        { el: 'time-paris', timeZone: 'Europe/Paris' },
+        { el: 'time-london', timeZone: 'Europe/London' },
+        { el: 'time-tokyo', timeZone: 'Asia/Tokyo' },
+    ];
+
+    timeZones.forEach((item) => {
+        const time = new Date().toLocaleTimeString('zh-CN', {
+            timeZone: item.timeZone,
+            hour12: false,
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        document.getElementById(item.el).textContent = time;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateTimes();
+    setInterval(updateTimes, 60000);
+  });
+
+
 function renderSongs(filteredSongs) {
     if (!Array.isArray(filteredSongs)) {
         console.error("Expected an array but got:", filteredSongs);
