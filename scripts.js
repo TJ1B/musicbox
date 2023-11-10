@@ -83,27 +83,43 @@ document.querySelectorAll('#songTable th').forEach(th => {
 });
 
 
-  // 世界时钟
-function updateTimes() {
+ // 世界时钟
+ function updateTimes() {
+    const baseTimeZone = 'Asia/Shanghai'; // 设置北京时间为基准时区
+    const baseTime = new Date().toLocaleString('en-US', { timeZone: baseTimeZone });
+    const baseDate = new Date(baseTime).getDate(); // 获取北京日期
+    
     const timeZones = [
-        { el: 'time-beijing', timeZone: 'Asia/Shanghai' },
-        { el: 'time-new-york', timeZone: 'America/New_York' },
-        { el: 'time-los-angeles', timeZone: 'America/Los_Angeles' },
-        { el: 'time-paris', timeZone: 'Europe/Paris' },
-        { el: 'time-london', timeZone: 'Europe/London' },
-        { el: 'time-tokyo', timeZone: 'Asia/Tokyo' },
+      { el: 'time-beijing', timeZone: 'Asia/Shanghai', dateDiffEl: 'date-diff-beijing' },
+      { el: 'time-new-york', timeZone: 'America/New_York', dateDiffEl: 'date-diff-new-york' },
+      { el: 'time-los-angeles', timeZone: 'America/Los_Angeles', dateDiffEl: 'date-diff-los-angeles' },
+      { el: 'time-paris', timeZone: 'Europe/Paris', dateDiffEl: 'date-diff-paris' },
+      { el: 'time-london', timeZone: 'Europe/London', dateDiffEl: 'date-diff-london' },
+      { el: 'time-tokyo', timeZone: 'Asia/Tokyo', dateDiffEl: 'date-diff-tokyo' },
     ];
-
+  
     timeZones.forEach((item) => {
-        const time = new Date().toLocaleTimeString('zh-CN', {
-            timeZone: item.timeZone,
-            hour12: false,
-            hour: '2-digit',
-            minute: '2-digit'
-        });
-        document.getElementById(item.el).textContent = time;
+      const currentTime = new Date().toLocaleString('en-US', { timeZone: item.timeZone });
+      const currentDate = new Date(currentTime).getDate();
+      
+      const timeString = new Date(currentTime).toLocaleTimeString('zh-CN', {
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+  
+      const dateDiff = currentDate - baseDate; // 计算日期差
+      let dateDiffDisplay = ''; // 用于显示的日期差
+      if (dateDiff === 1) {
+        dateDiffDisplay = '+1';
+      } else if (dateDiff === -1) {
+        dateDiffDisplay = '-1';
+      }
+      
+      document.getElementById(item.el).textContent = timeString;
+      document.getElementById(item.dateDiffEl).textContent = dateDiffDisplay;
     });
-}
+  }
 
 document.addEventListener('DOMContentLoaded', function() {
     updateTimes();

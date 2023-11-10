@@ -147,6 +147,7 @@ footer p {
   
   /* Individual time entries */
   .time-entry {
+    position: relative; /* 设置为相对定位 */
     background-color: #000; /* Maintain black background for continuity */
     color: rgb(121, 218, 121); /* Green text */
     padding: 5px; /* Reduced padding for a compact design */
@@ -157,6 +158,20 @@ footer p {
     text-align: center; /* Center-align the text */
   }
   
+  .date-diff {
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 距离容器顶部为0 */
+    right: 0; /* 距离容器右边为0 */
+    background: #000000; /* 可以调整为您喜欢的颜色 */
+    color: rgb(121, 218, 121); /* 字体颜色，根据需要调整 */
+    padding: 3px 6px; /* 内填充，根据需要调整 */
+    border-radius: 0 0 0 4px; /* 根据需要调整圆角 */
+    font-size: 0.8em; /* 字体大小，根据需要调整 */
+    font-style: oblique;
+    font-weight: bold;
+    /* 其它样式根据需要添加 */
+  }
+
   .time-entry h3 {
     margin: 0;
     font-size: 0.8em; /* Smaller font size for city names */
@@ -207,6 +222,7 @@ footer p {
     margin: 1px; /* Reduce margin to save space */
     flex: 1; /* Allows shrinking and growing as needed */
     min-width: 0; /* Allows shrinking below the specified width */
+    text-align: left; /* Center-align the text */
   }
 
   /* Adjust font sizes for mobile for a more compact look */
@@ -216,5 +232,13 @@ footer p {
 
   .time-entry p {
     font-size: 0.8em; /* Slightly smaller font size for times on mobile */
+  }
+
+  .date-diff {
+
+    padding: 2px 3px; /* 内填充，根据需要调整 */
+    border-radius: 0 0 0 4px; /* 根据需要调整圆角 */
+    font-size: 0.2em; /* 字体大小，根据需要调整 */
+    /* 其它样式根据需要添加 */
   }
   }
