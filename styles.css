@@ -110,7 +110,7 @@ h1 {
     text-align: center;
     color: rgb(255, 255, 255);
     border-top: 1px solid #2E2E2E;
-    background-image: url('footer.png');  /* 更改为您的图片路径 */
+    background-image: url('footer_gif.gif');  /* 更改为您的图片路径 */
     background-size: cover;  /* 使图片覆盖整个footer区域 */
     background-repeat: no-repeat;  /* 防止图片重复 */
     background-position: center;  /* 将图片居中 */
@@ -169,7 +169,6 @@ footer p {
     font-size: 0.8em; /* 字体大小，根据需要调整 */
     font-style: oblique;
     font-weight: bold;
-    /* 其它样式根据需要添加 */
   }
 
   .time-entry h3 {
@@ -185,7 +184,6 @@ footer p {
   }
   
  
-  
   
   @media screen and (max-width: 768px) {
     body {
@@ -215,8 +213,6 @@ footer p {
         height: 300px; /* Adjust the table height for mobile view */
     }
 
- /* Responsive Design for mobile screens */
-
  .time-entry {
     padding: 3px; /* Less padding for a more compact entry */
     margin: 1px; /* Reduce margin to save space */
@@ -225,7 +221,6 @@ footer p {
     text-align: left; /* Center-align the text */
   }
 
-  /* Adjust font sizes for mobile for a more compact look */
   .time-entry h3 {
     font-size: 0.7em; /* Even smaller font size for city names on mobile */
   }
@@ -239,6 +234,5 @@ footer p {
     padding: 2px 3px; /* 内填充，根据需要调整 */
     border-radius: 0 0 0 4px; /* 根据需要调整圆角 */
     font-size: 0.2em; /* 字体大小，根据需要调整 */
-    /* 其它样式根据需要添加 */
   }
   }
