@@ -198,6 +198,7 @@ document.getElementById('randomPick').addEventListener('click', function() {
             row.classList.remove('highlighted-row');
         }
     });
+    
 
 document.getElementById('randomResult').innerText = `随机歌曲：${randomSong.songName} 由 ${randomSong.singerName}`;
 });

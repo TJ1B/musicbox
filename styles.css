@@ -20,6 +20,14 @@ h1 {
     margin-top: 20px;
 }
 
+.search-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
 #searchBox {
     width: 25%;
     padding: 10px 14px;
@@ -28,7 +36,7 @@ h1 {
 }
 
 #randomPick {
-    padding: 8px 14px;
+    padding: 8px 8px;
     background-color: rgb(121, 218, 121);
     color: rgb(48, 48, 48);
     border: none;
@@ -37,11 +45,12 @@ h1 {
 }
 
 #randomResult {
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
 .table-container {
-    height: 520px; 
+    height: 480px; 
     overflow-y: auto;
     border-top: 1px solid #333;  
     border-bottom: 1px solid #333; 
@@ -50,6 +59,8 @@ h1 {
 .song-name {
     cursor: pointer;
 }
+
+
 
 .clicked-song {
     color:rgb(53, 128, 81); /* 可以根据需要更改颜色 */
@@ -104,7 +115,7 @@ h1 {
 }
 
 .footer-container {
-    margin-top: 40px;
+    margin-top: 10px;
     padding: 20px 0;
     background-color: #000000;  /* 为尾注添加深色背景 */
     text-align: center;
@@ -129,7 +140,7 @@ footer p {
 #global-times {
     background-color: #000; /* Black background */
     color: rgb(121, 218, 121); /* Green text */
-    padding: 10px 5px; /* Compact padding */
+    padding: 5px 5px; /* Compact padding */
     font-family: 'Arial', sans-serif; /* Modern font, change as needed */
   }
   
@@ -182,6 +193,8 @@ footer p {
     font-size: 0.9em; /* Compact font size for times */
     font-weight: bold; /* Bold to make the time stand out */
   }
+
+  
   
  
   
