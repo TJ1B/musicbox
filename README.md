@@ -1,4 +1,4 @@
-# musicbox
+# Tenjo-1-Songlist
 This is a simple online songlist display webpage （WIP）for chinese speaking virtual streamers and audiences created by TJ1B. 
 Main functions:
 - Search by song name;
