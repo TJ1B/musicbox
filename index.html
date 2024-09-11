@@ -6,43 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenjo-1-Beta Music Box</title>
-   
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Source+Han+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="header">
-        <h1>Tenjo-1-Beta Music Box</h1>
-        
+        <h1>Tenjo1Beta Music Box</h1>
        
         <div class="search-container">
-           
             <input type="text" id="searchBox" placeholder="搜索歌曲或歌手...">
         </div>
+
     <div class="search-container">
-        <button id="randomPick">随机摇一首</button>
-    </div>
-    <div class="search-result">
+        <button id="randomPick">随机点一首</button>
         <span id="randomResult"></span>
     </div>
+
+   
+
     </div>
 
     <div id="copyNotification" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px 20px; border-radius: 8px;">
-        已复制 请弹幕输入点歌+复制好的歌名
+        已复制O(∩_∩)O去弹幕点歌吧~
     </div>
 
     <div class="table-container">
        
         <table id="songTable">
-            <thead>
-                <tr>
-                    <th data-sort="songName">歌名(点击复制)  ▼</th>
-                    <th data-sort="singerName">歌手  ▼</th>
-                    <th data-sort="language">语言  ▼</th>
-                    
-                </tr>
-                
-            </thead>
+          <thead>
+            <tr>
+                <th data-sort="songName">歌名(点击复制)</th>
+                <th data-sort="singerName">
+                    歌手  
+                    <select class="filter" id="singerNameFilter">
+                        <option value="">全部</option>
+                        <!-- Other options will be populated by JavaScript -->
+                    </select>
+                </th>
+                <th data-sort="language">
+                    语言  
+                    <select class="filter" id="languageFilter">
+                        <option value="">全部</option>
+                        <!-- Other options will be populated by JavaScript -->
+                    </select>
+                </th>
+            </tr>
+        </thead>
             <tbody id="songList">
                 <!-- Song entries will be populated here by JavaScript -->
             </tbody>
@@ -86,7 +96,7 @@
       </div>
       <div class="time-entry">
         <h3>东京 (JST)</h3>
-        <p id="time-tokyo">--:--:--</p>
+        <p id="time-toky0">--:--:--</p>
         <span class="date-diff" id="date-diff-tokyo"></span>
       </div>
     </div>
