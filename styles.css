@@ -1,10 +1,20 @@
 body {
     font-family: 'Noto Sans', 'PingFang SC', 'Source Han Sans', 'Microsoft YaHei', sans-serif;
-    background-color: black;
     color: darkgray;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background: linear-gradient(to top, #333, #111), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 10 10"><circle cx="1" cy="1" r="1" fill="rgba(255, 255, 255, 0.1)"/></svg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#additionalImage {
+    position: fixed;
+    left: 35%;
+    width: 50%;
+    z-index: -1; /* Ensures the image is behind all other content */
+    opacity: 0.5; /* Optional: Adjust opacity if needed */
 }
 
 h1 {
@@ -17,8 +27,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
-   
+    margin-top: 10px;
 }
 
 .search-result {
@@ -26,7 +35,6 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    
 }
 
 #searchBox {
@@ -46,8 +54,11 @@ h1 {
 }
 
 #randomResult {
-   
-  
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    text-align: center;
+    display: block;
 }
 
 .filter {
@@ -63,12 +74,18 @@ h1 {
     color: darkgray; /* 字体颜色 */
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures columns are fixed width */
+}
 
 .table-container {
-    height: 480px; 
+    height: 480px;
     overflow-y: auto;
-    margin-top: 10px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     margin-bottom: 10px;
+    
 }
 
 /* Custom scrollbar styles for all elements */
@@ -91,13 +108,13 @@ h1 {
 }
 
 .clicked-song {
-    color:rgb(53, 128, 81); /* 可以根据需要更改颜色 */
+    color: rgb(53, 128, 81); /* 可以根据需要更改颜色 */
 }
 
 #songTable {
     width: 100%;
     border-collapse: collapse;
-    
+    table-layout: fixed; /* Ensures columns are fixed width */
 }
 
 #songTable th {
@@ -108,8 +125,10 @@ h1 {
 }
 
 #songTable th, #songTable td {
+    text-align: left;
     border: 1px solid #474747;
     padding: 10px;
+    word-wrap: break-word; /* Ensures content wraps within the cell */
 }
 
 #songTable tr:hover {
@@ -117,24 +136,24 @@ h1 {
 }
 
 #songTable th[data-sort] {
-    cursor: pointer;  
-    transition: background-color 0.3s;  /* 背景色渐变效果 */
+    cursor: pointer;
+    transition: background-color 0.3s; /* 背景色渐变效果 */
 }
 
 #songTable th[data-sort]:hover {
-    background-color: #555;  /* 或您喜欢的任何颜色 */
+    background-color: #555; /* 或您喜欢的任何颜色 */
 }
 
 #songTable th:nth-child(1), #songTable td:nth-child(1) { /* 第一列, songName */
-    width: 40%;  /* 调整为所需的宽度 */
+    width: 40%; /* 调整为所需的宽度 */
 }
 
 #songTable th:nth-child(2), #songTable td:nth-child(2) { /* 第二列, singerName */
-    width: 40%;  /* 调整为所需的宽度 */
+    width: 40%; /* 调整为所需的宽度 */
 }
 
 #songTable th:nth-child(3), #songTable td:nth-child(3) { /* 第三列, language */
-    width: 20%;  /* 调整为所需的宽度 */
+    width: 20%; /* 调整为所需的宽度 */
 }
 
 #songTable tbody tr {
@@ -149,49 +168,44 @@ h1 {
 .footer-container {
     margin-top: 10px;
     padding: 20px 0;
-    background-color: #000000;  /* 为尾注添加深色背景 */
     text-align: center;
     color: rgb(255, 255, 255);
     border-top: 1px solid #2E2E2E;
-    background-image: url('footer_gif.gif');  /* 更改为您的图片路径 */
-    background-size: cover;  /* 使图片覆盖整个footer区域 */
-    background-repeat: no-repeat;  /* 防止图片重复 */
-    background-position: center;  /* 将图片居中 */
+    background-image: url('footer_gif.gif'); /* 更改为您的图片路径 */
+    background-size: cover; /* 使图片覆盖整个footer区域 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    background-position: center; /* 将图片居中 */
 }
 
 footer p {
     margin: 0;
     padding: 5px;
-    font-size: 0.9em;  /* 设置尾注文字大小 */
+    color: rgb(218, 218, 218);
+    font-size: 0.9em; /* 设置尾注文字大小 */
 }
 
-
-
-
-  /* Global Time Section Styling */
+/* Global Time Section Styling */
 #global-times {
-    background-color: #000; /* Black background */
-    color:rgb(103, 211, 136); /* Green text */
+    color: rgb(103, 211, 136); /* Green text */
     padding: 5px 5px; /* Compact padding */
     font-family: 'Arial', sans-serif; /* Modern font, change as needed */
-  }
-  
-  #global-times h2 {
+}
+
+#global-times h2 {
     margin-bottom: 8px;
     font-size: 1.1em; /* Slightly smaller heading for compact design */
-  }
-  
-  /* Container for time entries */
-  .time-entries {
+}
+
+/* Container for time entries */
+.time-entries {
     display: flex;
     justify-content: center;
     gap: 5px; /* Reduced space between the children for a compact design */
-  }
-  
-  /* Individual time entries */
-  .time-entry {
+}
+
+/* Individual time entries */
+.time-entry {
     position: relative; /* 设置为相对定位 */
-    background-color: #000; /* Maintain black background for continuity */
     color: rgb(103, 211, 136); /* Green text */
     padding: 5px; /* Reduced padding for a compact design */
     border: 1px solid rgb(103, 211, 136); /* Green border */
@@ -199,45 +213,45 @@ footer p {
     flex: 1; /* Allows equal spacing and takes up available space */
     min-width: 80px; /* Minimum width to ensure content fits */
     text-align: center; /* Center-align the text */
-  }
-  
-  .date-diff {
+}
+
+.date-diff {
     position: absolute; /* 绝对定位 */
     top: 0; /* 距离容器顶部为0 */
     right: 0; /* 距离容器右边为0 */
-    background: #000000; /* 可以调整为您喜欢的颜色 */
     color: rgb(103, 211, 136); /* 字体颜色，根据需要调整 */
     padding: 3px 6px; /* 内填充，根据需要调整 */
     border-radius: 0 0 0 4px; /* 根据需要调整圆角 */
     font-size: 0.8em; /* 字体大小，根据需要调整 */
     font-style: oblique;
     font-weight: bold;
-  }
+}
 
-  .time-entry h3 {
+.time-entry h3 {
     margin: 0;
     font-size: 0.8em; /* Smaller font size for city names */
     font-weight: normal; /* Less emphasis on city names to highlight times */
-  }
-  
-  .time-entry p {
+}
+
+.time-entry p {
     margin: 3px 0 0; /* Reduced space above the time */
     font-size: 0.9em; /* Compact font size for times */
     font-weight: bold; /* Bold to make the time stand out */
-  }
+}
 
-  
-  
- 
-  
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     body {
         padding: 10px;
+        font-size: 0.9em;
     }
 
-    #randomResult {
-        margin-bottom: 10px;
-        font-size: 0.9em;
+    #additionalImage {
+        position: fixed;
+        top: 30%;
+        left: 5%;
+        width: 100%;
+        z-index: -1; /* Ensures the image is behind all other content */
+        opacity: 0.5; /* Optional: Adjust opacity if needed */
     }
 
     .search-container {
@@ -247,37 +261,39 @@ footer p {
 
     #searchBox {
         width: 50%;
-        margin-bottom: 10px;
     }
 
     .header {
-        padding: 10px 0;
+        padding-top: 30px;
     }
 
     .table-container {
-        height: 300px; /* Adjust the table height for mobile view */
+        height: 360px; /* Adjust the table height for mobile view */
+        overflow-x: auto;
     }
 
- .time-entry {
-    padding: 3px; /* Less padding for a more compact entry */
-    margin: 1px; /* Reduce margin to save space */
-    flex: 1; /* Allows shrinking and growing as needed */
-    min-width: 0; /* Allows shrinking below the specified width */
-    text-align: left; /* Center-align the text */
-  }
+   
 
-  .time-entry h3 {
-    font-size: 0.7em; /* Even smaller font size for city names on mobile */
-  }
+    .time-entry {
+        padding: 3px; /* Less padding for a more compact entry */
+        margin: 1px; /* Reduce margin to save space */
+        flex: 1; /* Allows shrinking and growing as needed */
+        min-width: 0; /* Allows shrinking below the specified width */
+        text-align: left; /* Center-align the text */
+    }
 
-  .time-entry p {
-    font-size: 0.8em; /* Slightly smaller font size for times on mobile */
-  }
+    .time-entry h3 {
+        font-size: 0.7em; /* Even smaller font size for city names on mobile */
+    }
 
-  .date-diff {
+    .time-entry p {
+        font-size: 0.8em; /* Slightly smaller font size for times on mobile */
+    }
 
-    padding: 2px 3px; /* 内填充，根据需要调整 */
-    border-radius: 0 0 0 4px; /* 根据需要调整圆角 */
-    font-size: 0.2em; /* 字体大小，根据需要调整 */
-  }
-  }
+    .date-diff {
+        padding: 2px 3px; /* 内填充，根据需要调整 */
+        border-radius: 0 0 0 4px; /* 根据需要调整圆角 */
+        font-size: 0.2em; /* 字体大小，根据需要调整 */
+    }
+}
+

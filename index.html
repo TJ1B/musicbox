@@ -12,7 +12,7 @@
 
 <body>
     <div class="header">
-        <h1>Tenjo1Beta Music Box</h1>
+        <h1>Tenjo1Beta Songlist</h1>
        
         <div class="search-container">
             <input type="text" id="searchBox" placeholder="搜索歌曲或歌手...">
@@ -20,7 +20,12 @@
 
     <div class="search-container">
         <button id="randomPick">随机点一首</button>
-        <span id="randomResult"></span>
+    </div>
+    
+    <div class="randomResult">
+      <span id="randomResult"></span>
+    </div>
+
     </div>
 
    
@@ -30,6 +35,8 @@
     <div id="copyNotification" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px 20px; border-radius: 8px;">
         已复制O(∩_∩)O去弹幕点歌吧~
     </div>
+
+    <img id="additionalImage" src="/bw badget.png" alt="Additional Image">
 
     <div class="table-container">
        
@@ -96,7 +103,7 @@
       </div>
       <div class="time-entry">
         <h3>东京 (JST)</h3>
-        <p id="time-toky0">--:--:--</p>
+        <p id="time-tokyo">--:--:--</p>
         <span class="date-diff" id="date-diff-tokyo"></span>
       </div>
     </div>
