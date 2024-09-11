@@ -19,7 +19,9 @@ body {
 
 h1 {
     text-align: center;
-    color: rgb(103, 211, 136);
+    font-size: 2.2em;
+    color: rgb(107, 175, 127);
+    margin-bottom: 30px;
 }
 
 .search-container {
@@ -28,6 +30,7 @@ h1 {
     align-items: center;
     gap: 10px;
     margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .search-result {
@@ -45,20 +48,13 @@ h1 {
 }
 
 #randomPick {
-    padding: 6px 8px;
-    background-color: rgb(103, 211, 136);
+    padding: 6px 9px;
+    background-color: rgb(107, 175, 127);
     color: rgb(48, 48, 48);
     border: none;
+    font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-}
-
-#randomResult {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 0.9em;
-    text-align: center;
-    display: block;
 }
 
 .filter {
@@ -67,11 +63,14 @@ h1 {
     border: 1px solid #474747; /* 边框颜色 */
     border-radius: 5px; /* 圆角 */
     padding: 5px; /* 内边距 */
+    width: 70%; /* Ensures the filter always fits in the column */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
 
 .filter option {
     background-color: #333; /* 深灰背景 */
     color: darkgray; /* 字体颜色 */
+    font-size: small;
 }
 
 table {
@@ -186,7 +185,7 @@ footer p {
 
 /* Global Time Section Styling */
 #global-times {
-    color: rgb(103, 211, 136); /* Green text */
+    color: rgb(107, 175, 127); /* Green text */
     padding: 5px 5px; /* Compact padding */
     font-family: 'Arial', sans-serif; /* Modern font, change as needed */
 }
@@ -206,9 +205,9 @@ footer p {
 /* Individual time entries */
 .time-entry {
     position: relative; /* 设置为相对定位 */
-    color: rgb(103, 211, 136); /* Green text */
+    color: rgb(107, 175, 127); /* Green text */
     padding: 5px; /* Reduced padding for a compact design */
-    border: 1px solid rgb(103, 211, 136); /* Green border */
+    border: 1px solid rgb(107, 175, 127); /* Green border */
     border-radius: 2px; /* Smaller border radius for a sharper look */
     flex: 1; /* Allows equal spacing and takes up available space */
     min-width: 80px; /* Minimum width to ensure content fits */
@@ -219,7 +218,7 @@ footer p {
     position: absolute; /* 绝对定位 */
     top: 0; /* 距离容器顶部为0 */
     right: 0; /* 距离容器右边为0 */
-    color: rgb(103, 211, 136); /* 字体颜色，根据需要调整 */
+    color: rgb(107, 175, 127); /* 字体颜色，根据需要调整 */
     padding: 3px 6px; /* 内填充，根据需要调整 */
     border-radius: 0 0 0 4px; /* 根据需要调整圆角 */
     font-size: 0.8em; /* 字体大小，根据需要调整 */
@@ -247,7 +246,7 @@ footer p {
 
     #additionalImage {
         position: fixed;
-        top: 30%;
+        top: 45%;
         left: 5%;
         width: 100%;
         z-index: -1; /* Ensures the image is behind all other content */
@@ -272,7 +271,9 @@ footer p {
         overflow-x: auto;
     }
 
-   
+    .filter option {
+        font-size:0.8em;
+    }
 
     .time-entry {
         padding: 3px; /* Less padding for a more compact entry */

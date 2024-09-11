@@ -169,7 +169,7 @@ document.getElementById('songList').addEventListener('click', function(event) {
 // 随机歌曲
 document.getElementById('randomPick').addEventListener('click', function() {
     if (songs.length === 0) {
-        document.getElementById('randomResult').innerText = "歌曲列表为空！";
+        document.getElementById('randomResult').innerText = "歌曲列表为空555";
         return;
     }
 
@@ -195,5 +195,5 @@ document.getElementById('randomPick').addEventListener('click', function() {
         }
     });
 
-    document.getElementById('randomResult').innerText = `${randomSong.songName} by ${randomSong.singerName}`;
+    document.getElementById('randomResult').innerText = `${randomSong.songName} - ${randomSong.singerName}`;
 });
