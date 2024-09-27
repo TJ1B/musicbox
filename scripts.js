@@ -14,6 +14,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+document.getElementById('searchBox').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const filteredSongs = songs.filter(song => 
+        song.songName.toLowerCase().includes(searchTerm) || 
+        song.singerName.toLowerCase().includes(searchTerm)
+    );
+    renderSongs(filteredSongs);
+});
+
+function renderSongs(songsToRender) {
+    const songList = document.getElementById('songList');
+    songList.innerHTML = '';
+
+    songsToRender.forEach(song => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${song.songName}</td>
+            <td>${song.singerName}</td>
+            <td>${song.language}</td>
+        `;
+        songList.appendChild(row);
+    });
+}
+
+
 function populateFilterOptions() {
     console.log('Populating filter options');
     console.log('Number of songs:', songs.length);
